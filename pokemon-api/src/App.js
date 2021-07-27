@@ -32,12 +32,15 @@ class App extends React.Component {
     })
   }
   handleChange(event){
-    this.setState({
-      pokedex: this.state.pokedex,
-      compToRender: this.state.compToRender,
-      select: event.target.value
+    fetch(`https://pokeapi.co/api/v2/type/${event.target.value}?limit=151`)
+    .then(response=>response.json())
+    .then(data=>{
+      this.setState({
+        pokedex: this.state.pokedex,
+        compToRender: this.state.compToRender,
+        select: data
+      })
     })
-    setTimeout(()=>{console.log(this.state.select)}, 1000);
   }
 
   render(){
