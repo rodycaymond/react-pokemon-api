@@ -39,8 +39,7 @@ class App extends React.Component {
     })
     setTimeout(()=>{console.log(this.state.select)}, 1000);
   }
-//<Pokedex pokedex={this.state.pokedex} action={this.onPokemonClick}/>
-//<MainBody navComp={this.state.compToRender} pokedex={this.state.pokedex} />
+
   render(){
     let components = [<Pokedex pokedex={this.state.pokedex} />, <About />];
     const options = [

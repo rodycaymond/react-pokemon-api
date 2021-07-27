@@ -4,7 +4,7 @@ function About (props){
 
 
     return (
-        <div>
+        <div className="center">
             <h1>About</h1>
             <br></br>
             <h2>What is this?</h2>

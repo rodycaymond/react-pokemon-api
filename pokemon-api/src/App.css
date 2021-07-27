@@ -81,10 +81,18 @@
   margin: auto;
   border: 2px solid green;
   overflow: scroll;
+  box-shadow: 0 0 5px grey;
 }
 h1 {
   text-align: center;
 }
 .pokemon-card {
   text-align: center;
+}
+.center {
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  background-color: rgb(84, 140, 172);
+  box-shadow: 0 0 10px grey;
 }
