@@ -1,17 +1,20 @@
 import React from 'react';
+import { Route, Link } from 'react-router-dom';
 
 function Pokemon (props) {
 
     function handleClick(){
-        props.action(props.id);
+        props.pokemonCardFunction(props.id);
     }
 
+
     return (
-        <div className="pokemon-preview" onClick={handleClick}>
+        <Link to={'pokedex/pokemon/'+props.id} onClick={handleClick} className="pokemon-preview" >
             <h4>{props.pokeName}</h4>
             <img src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + props.id + ".png"}></img>
-        </div>
+        </Link>
     );
 }
 
 export default Pokemon;
+
