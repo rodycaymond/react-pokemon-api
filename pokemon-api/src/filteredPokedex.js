@@ -7,7 +7,7 @@ function FilteredPokedex (props) {
     let pokemon = props.pokedex.map(item=>{
         let name = item.pokemon.name;
         let arr = item.pokemon.url.split('/');
-        console.log(arr)
+
         let id = Number(arr[arr.length-2]);
         
         return <Pokemon pokemonCardFunction={props.pokemonCardFunction} pokeName={name} id={id}/>

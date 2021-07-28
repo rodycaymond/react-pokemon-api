@@ -8,7 +8,7 @@ import MainBody from './mainbody.js';
 import About from './about.js';
 import PokemonCard from './pokemonCard.js';
 import FilteredPokedex from './filteredPokedex.js';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
 import history from 'history/browser';
 
 
