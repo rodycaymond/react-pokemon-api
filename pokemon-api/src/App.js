@@ -49,21 +49,15 @@ class App extends React.Component {
     fetch(`https://pokeapi.co/api/v2/type/${event.value}?limit=151`)
       .then(response => response.json())
       .then(data => {
-        // this.setState(currentState => ({
-        //   ...currentState,
-        //   select: data
-        // }));
         this.setState({
           pokedex: this.state.pokedex,
           pokemonId: this.state.pokemonId,
           pokemonCard: this.state.pokemonCard,
           select: data
         })
-        console.log(this.state.select.name, this.state.select.pokemon)
-        history.push("/pokedex/" + this.state.select.name);
+        console.log(this.state.select.name, this.state.select.pokemon[0].pokemon.url)
       })
   }
-
   render() {
     const options = [
       { value: 'bug', label: 'Bug' },
@@ -94,6 +88,8 @@ class App extends React.Component {
               <p>Or filter them by their type!</p>
               <form>
                 <Select onChange={this.handleChange} className="select" options={options} />
+                <br></br>
+                <Link className="filter-button" to={'/pokedex/'+this.state.select.name}>Filter!</Link>
                 <br></br>
               </form>
             </div>

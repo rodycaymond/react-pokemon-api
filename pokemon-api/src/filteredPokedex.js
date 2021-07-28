@@ -5,17 +5,19 @@ import { Route, Link } from 'react-router-dom';
 function FilteredPokedex (props) {
 
     let pokemon = props.pokedex.map(item=>{
-        let name = item.name;
-        let arr = item.url.split('/');
-        let id = Number(arr[arr.length-1]);
+        let name = item.pokemon.name;
+        let arr = item.pokemon.url.split('/');
+        console.log(arr)
+        let id = Number(arr[arr.length-2]);
+        
         return <Pokemon pokemonCardFunction={props.pokemonCardFunction} pokeName={name} id={id}/>
     })
     return (
-        <Link to={"/pokedex/"+props.name}>
+        <div>
             <ul className="pokemon-flex">
                 {pokemon}
             </ul>
-        </Link>
+        </div>
     )
 }
 
